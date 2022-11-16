@@ -1,12 +1,15 @@
 import TextField from "@mui/material/TextField";
-import { TeamDetailTabProps } from "./TeamDetailTypes";
+import { useTeamDetail } from "../../../stores";
 
 
-export function TeamBasic({ item, update }: TeamDetailTabProps) {
+export function TeamBasic() {
+    const [ item, update ] = useTeamDetail(state => [ state.item, state.update ])
+    
     return (
         <>
             <TextField
-                fullWidth label="Team Name"
+                fullWidth
+                label="Team Name"
                 id="teamName"
                 margin="normal"
                 value={item.name}
@@ -16,6 +19,7 @@ export function TeamBasic({ item, update }: TeamDetailTabProps) {
             <TextField
                 id="outlined-multiline-static"
                 label="Description"
+                fullWidth
                 multiline
                 rows={4}
                 defaultValue={item.description}

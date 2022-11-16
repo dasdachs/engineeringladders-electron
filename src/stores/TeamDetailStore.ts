@@ -1,8 +1,13 @@
-import { TeamDbSettings, TeamDetailStore } from "../types";
+import { AbstractDetailStore, TeamDbSettings } from "../types";
 import create from "zustand";
 import { devtools } from "zustand/middleware";
 import { PerssistantStore } from "../db";
 import { nanoid } from "nanoid";
+
+interface TeamDetailStore extends AbstractDetailStore<TeamDbSettings> {
+    get(db: PerssistantStore, itemId: string): void;
+    save(db: PerssistantStore, itemId?: string): void;
+}
 
 export const useTeamDetail = create<TeamDetailStore>()(
     devtools(

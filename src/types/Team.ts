@@ -1,3 +1,9 @@
+export interface ITeam {
+    id: string;
+    name: string;
+    description?: string;
+}
+
 // IndexedDB types
 export interface TeamDbSettings {
     id: string;
@@ -8,14 +14,13 @@ export interface TeamDbSettings {
     members: string[];
 }
 
-interface TeamDbPositions {
+export interface TeamDbPositions {
     jobTitle: string;
     levels: TeamDbPositionLevels[];
 }
 
-interface TeamDbPositionLevels {
+export interface TeamDbPositionLevels {
     name: string;
-    levelId: string;
     senior: boolean;
     conditions: TeamDbPositionCondition[]
 }

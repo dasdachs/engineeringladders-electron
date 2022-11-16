@@ -23,7 +23,6 @@ module.exports = {
   ],
   "rules": {
     "object-curly-spacing": [ "warn", "always" ],
-    "array-bracket-spacing": [ "warn", "always" ],
     "react/react-in-jsx-scope": "off"
   },
   "settings": {

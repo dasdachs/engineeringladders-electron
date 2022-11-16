@@ -22,11 +22,10 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Stats />} />
             <Route path="teams">
-                <Route index element={<TeamsList />} />
                 <Route path=":teamId/*" element={<TeamDetailsContainer />} />
                 <Route path="new/*" element={<TeamDetailsContainer isNew />} />
+                <Route index element={<TeamsList />} />
             </Route>
-
             <Route path="/settings" element={<Settings />} />
         </Routes>
       </DatabaseContext.Provider>
